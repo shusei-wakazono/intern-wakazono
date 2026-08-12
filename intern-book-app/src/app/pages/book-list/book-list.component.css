@@ -1,0 +1,69 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.book-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-inner {
+  padding: 16px 20px;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+  color: #222;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.input-medium {
+  width: 500px;
+}
+
+.input-small {
+  width: 250px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.book-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 6px 0;
+  color: #222;
+}
+
+.book-summary {
+  font-size: 13px;
+  color: #333;
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+}
+
+.book-score {
+  font-size: 13px;
+  color: #333;
+  margin: 0;
+}
