@@ -1,0 +1,13 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.sub-title {
+  font-size: 14px;
+}
