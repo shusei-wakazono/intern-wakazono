@@ -27,28 +27,12 @@
       </div>
     </div>
   </mat-card>
-
   <div class="book-list">
-    <mat-card class="book-card">
+    <mat-card *ngFor="let book of bookList" class="book-card">
       <div class="card-inner">
-        <h2 class="book-title">アンドロイドは電気羊の夢を見るか？</h2>
-        <p class="book-summary">
-          第三次大戦後の未来、サンフランシスコを舞台に賞金稼ぎのリック・デッカードが、火星から逃亡してきた8体のアンドロイドを「処理」するというあらすじ
-        </p>
-        <p class="book-score">評価: 90点</p>
-        <div class="card-actions">
-          <button mat-raised-button color="warn">削除</button>
-        </div>
-      </div>
-    </mat-card>
-
-    <mat-card class="book-card">
-      <div class="card-inner">
-        <h2 class="book-title">岩田さん: 岩田聡はこんなことを話していた。</h2>
-        <p class="book-summary">
-          任天堂の元社長、岩田聡さんのことばをまとめた本
-        </p>
-        <p class="book-score">評価: 90点</p>
+        <h2 class="book-title">{{ book.name }}</h2>
+        <p class="book-summary">{{ book.detail }}</p>
+        <p class="book-score">評価: {{ book.evaluation }}点</p>
         <div class="card-actions">
           <button mat-raised-button color="warn">削除</button>
         </div>
