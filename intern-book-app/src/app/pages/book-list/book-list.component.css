@@ -48,21 +48,27 @@
   margin-top: 4px;
 }
 
-.book-title {
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.book-name {
   font-size: 16px;
   font-weight: bold;
   margin: 0 0 6px 0;
   color: #222;
 }
 
-.book-summary {
+.book-detail {
   font-size: 13px;
   color: #333;
   margin: 0 0 6px 0;
   line-height: 1.4;
 }
 
-.book-score {
+.book-evaluation {
   font-size: 13px;
   color: #333;
   margin: 0;
