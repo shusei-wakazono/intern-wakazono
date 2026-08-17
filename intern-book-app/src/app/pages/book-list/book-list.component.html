@@ -34,6 +34,10 @@
     </div>
   </mat-card>
   <div class="book-list">
-    <app-card *ngFor="let book of bookList" [book]="book"></app-card>
+    <app-card
+      *ngFor="let book of bookList; let i = index"
+      [book]="book"
+      (delete)="deleteBook(i)"
+    ></app-card>
   </div>
 </div>
