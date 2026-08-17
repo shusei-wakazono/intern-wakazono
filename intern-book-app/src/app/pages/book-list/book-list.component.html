@@ -33,11 +33,12 @@
       </div>
     </div>
   </mat-card>
-  <div class="book-list">
+  <div class="book-list" *ngIf="bookList.length > 0">
     <app-card
       *ngFor="let book of bookList; let i = index"
       [book]="book"
       (delete)="deleteBook(i)"
     ></app-card>
   </div>
+  <p class="no-data" *ngIf="bookList.length === 0">データがありません</p>
 </div>
