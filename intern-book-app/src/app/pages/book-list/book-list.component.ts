@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Book } from '../../types/book';
+import { CardComponent } from '../../components/card/card.component';
 
 @Component({
   selector: 'app-book-list',
@@ -15,6 +16,7 @@ import { Book } from '../../types/book';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    CardComponent,
   ],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.css',

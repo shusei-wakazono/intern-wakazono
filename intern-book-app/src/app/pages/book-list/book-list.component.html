@@ -28,15 +28,6 @@
     </div>
   </mat-card>
   <div class="book-list">
-    <mat-card *ngFor="let book of bookList" class="book-card">
-      <div class="card-inner">
-        <h2 class="book-name">{{ book.name }}</h2>
-        <p class="book-detail">{{ book.detail }}</p>
-        <p class="book-evaluation">評価: {{ book.evaluation }}点</p>
-        <div class="card-actions">
-          <button mat-raised-button color="warn">削除</button>
-        </div>
-      </div>
-    </mat-card>
+    <app-card *ngFor="let book of bookList" [book]="book"></app-card>
   </div>
 </div>
