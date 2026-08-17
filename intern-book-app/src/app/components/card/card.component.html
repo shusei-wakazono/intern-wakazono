@@ -4,7 +4,7 @@
     <p class="book-detail">{{ book.detail }}</p>
     <p class="book-evaluation">評価: {{ book.evaluation }}点</p>
     <div class="card-actions">
-      <button mat-raised-button color="warn">削除</button>
+      <button mat-raised-button color="warn" (click)="onDelete()">削除</button>
     </div>
   </div>
 </mat-card>

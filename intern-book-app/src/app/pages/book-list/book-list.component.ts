@@ -53,4 +53,7 @@ export class BookListComponent {
       evaluation: 0,
     };
   }
+  deleteBook(index: number): void {
+    this.bookList.splice(index, 1);
+  }
 }
