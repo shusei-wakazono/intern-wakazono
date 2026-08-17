@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,12 +17,18 @@ import { CardComponent } from '../../components/card/card.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    FormsModule,
     CardComponent,
   ],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.css',
 })
 export class BookListComponent {
+  newBook: Book = {
+    name: '',
+    detail: '',
+    evaluation: 0,
+  };
   bookList: Book[] = [
     {
       name: 'アンドロイドは電気羊の夢を見るか？',
@@ -35,4 +42,15 @@ export class BookListComponent {
       evaluation: 90,
     },
   ];
+  addBook(): void {
+    if (!this.newBook.name) return;
+
+    this.bookList.push({ ...this.newBook });
+
+    this.newBook = {
+      name: '',
+      detail: '',
+      evaluation: 0,
+    };
+  }
 }

@@ -5,7 +5,7 @@
 
       <div class="form-fields">
         <mat-form-field appearance="fill" class="input-medium">
-          <input matInput placeholder="書籍名" readonly />
+          <input matInput placeholder="書籍名" [(ngModel)]="newBook.name" />
         </mat-form-field>
 
         <mat-form-field appearance="fill" class="input-medium">
@@ -13,17 +13,23 @@
             matInput
             placeholder="あらすじ"
             rows="2"
-            readonly
+            [(ngModel)]="newBook.detail"
           ></textarea>
         </mat-form-field>
 
         <mat-form-field appearance="fill" class="input-small">
-          <input matInput placeholder="評価点" readonly />
+          <input
+            matInput
+            placeholder="評価点"
+            [(ngModel)]="newBook.evaluation"
+          />
         </mat-form-field>
       </div>
 
       <div class="card-actions">
-        <button mat-raised-button color="primary">追加</button>
+        <button mat-raised-button color="primary" (click)="addBook()">
+          追加
+        </button>
       </div>
     </div>
   </mat-card>
