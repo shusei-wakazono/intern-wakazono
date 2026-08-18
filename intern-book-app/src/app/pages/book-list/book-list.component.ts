@@ -5,8 +5,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { Book } from '../../types/book';
 import { CardComponent } from '../../components/card/card.component';
+import { DeleteDialogComponent } from '../../components/delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-book-list',
@@ -18,6 +20,7 @@ import { CardComponent } from '../../components/card/card.component';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatDialogModule,
     CardComponent,
   ],
   templateUrl: './book-list.component.html',
@@ -42,6 +45,9 @@ export class BookListComponent {
       evaluation: 90,
     },
   ];
+
+  constructor(private dialog: MatDialog) {}
+
   addBook(): void {
     if (!this.newBook.name) return;
 
@@ -54,6 +60,12 @@ export class BookListComponent {
     };
   }
   deleteBook(index: number): void {
-    this.bookList.splice(index, 1);
+    const dialogRef = this.dialog.open(DeleteDialogComponent);
+
+    dialogRef.afterClosed().subscribe((result: boolean) => {
+      if (result) {
+        this.bookList.splice(index, 1);
+      }
+    });
   }
 }
