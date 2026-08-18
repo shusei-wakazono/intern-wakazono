@@ -70,7 +70,9 @@ export class BookListComponent {
 
     dialogRef.afterClosed().subscribe((result: boolean) => {
       if (result) {
+        const deletedName = this.bookList[index].name;
         this.bookList.splice(index, 1);
+        this.messageService.add(`書籍「${deletedName}」を削除しました。`);
       }
     });
   }
