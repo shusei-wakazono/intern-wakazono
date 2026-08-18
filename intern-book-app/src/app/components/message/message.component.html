@@ -1,0 +1,15 @@
+<div *ngIf="messageService.messages.length" class="message-container">
+  <h2>操作ログ</h2>
+  <button
+    mat-stroked-button
+    color="warn"
+    class="clear-button"
+    (click)="messageService.clear()"
+  >
+    クリア
+  </button>
+
+  <div *ngFor="let message of messageService.messages" class="message-row">
+    {{ message }}
+  </div>
+</div>

@@ -9,6 +9,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { Book } from '../../types/book';
 import { CardComponent } from '../../components/card/card.component';
 import { DeleteDialogComponent } from '../../components/delete-dialog/delete-dialog.component';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-book-list',
@@ -46,12 +47,17 @@ export class BookListComponent {
     },
   ];
 
-  constructor(private dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    private messageService: MessageService,
+  ) {}
 
   addBook(): void {
     if (!this.newBook.name) return;
 
     this.bookList.push({ ...this.newBook });
+
+    this.messageService.add(`書籍「${this.newBook.name}」を追加しました。`);
 
     this.newBook = {
       name: '',
@@ -64,7 +70,9 @@ export class BookListComponent {
 
     dialogRef.afterClosed().subscribe((result: boolean) => {
       if (result) {
+        const deletedName = this.bookList[index].name;
         this.bookList.splice(index, 1);
+        this.messageService.add(`書籍「${deletedName}」を削除しました。`);
       }
     });
   }
